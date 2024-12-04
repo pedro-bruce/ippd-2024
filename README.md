@@ -12,24 +12,6 @@ A Distância de Levenshtein, nomeada em homenagem ao matemático soviético Vlad
 - **Remoção** de um caractere;
 - **Substituição** de um caractere.
 
-### Definição Matemática
-
-A distância de Levenshtein entre duas strings \(a\) e \(b\) (com comprimentos respectivos \(|a|\) e \(|b|\)) é dada por \(lev_{a,b}(|a|, |b|)\), definida como:
-
-\[
-lev_{a,b}(i, j) =
-\begin{cases} 
-\max(i, j) & \text{se } \min(i, j) = 0, \\
-\min \begin{cases}
-lev_{a,b}(i-1, j) + 1, \\
-lev_{a,b}(i, j-1) + 1, \\
-lev_{a,b}(i-1, j-1) + 1_{(a_i \neq b_j)}
-\end{cases} & \text{caso contrário}.
-\end{cases}
-\]
-
-Aqui, \(1_{(a_i \neq b_j)} = 0\) se \(a_i = b_j\) e \(1\) caso contrário. Assim, \(lev_{a,b}(i, j)\) representa a distância entre os primeiros \(i\) caracteres de \(a\) e os primeiros \(j\) caracteres de \(b\).
-
 ### Exemplo
 
 A distância de Levenshtein entre **"chicken"** e **"kicking"** é **4**, pois as edições necessárias são:
